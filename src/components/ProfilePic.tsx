@@ -3,5 +3,5 @@ interface ProfilePicProps {
 }
 
 export default function ProfilePic({ url }: ProfilePicProps) {
-    return <img src={url} className='size-12 flex-none rounded-full bg-gray-50' />;
+    return <img src={url} className='size-8 flex-none rounded-full bg-gray-50' />;
 }
