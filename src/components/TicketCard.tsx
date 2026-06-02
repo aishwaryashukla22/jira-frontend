@@ -1,18 +1,20 @@
 import ProfilePic from './ProfilePic';
 import { Draggable } from './Drag&Drop';
 
-interface TicketCardProps {
+export interface TicketCardProps {
     title: string;
     id: string;
+    description: string;
     storyPoints: number;
     profilePicUrl: string;
     type: string;
+    onClick?: () => void;
 }
 
-export default function TicketCard({ title, id, storyPoints, profilePicUrl, type }: TicketCardProps) {
+export default function TicketCard({ title, id, storyPoints, profilePicUrl, type, onClick }: TicketCardProps) {
     return (
         <Draggable id={id}>
-            <div className="relative w-full max-lg:row-start-1">
+            <div className="relative w-full max-lg:row-start-1 cursor-pointer" onClick={onClick}>
                 <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-4xl"></div>
                 <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
                     <div className="px-2 pt-2 sm:px-2 sm:pt-2">
